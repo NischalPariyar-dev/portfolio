@@ -1,0 +1,135 @@
+
+
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-size-adjust:initial;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family:fantasy;
+    color:rgb(11, 11, 27);
+}
+
+h1{
+    font-size: 4rem;
+    margin-top: 0.25cm;
+    animation: slideInLeft 2s ease-out;
+}
+
+p{
+    font-size: xx-large;
+    animation: slideInRight 2s ease-out;
+}
+
+.hero > .triangle-line:first-of-type {
+    animation: slideInLeft 2s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name:hover{
+
+    color: #FFD1DC;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+    from{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 2;
+    }
+}
+
+.line {
+  width: 200px;   
+  border: none;      
+  border-top: 1px solid #FFD1DC;
+  margin: 20px auto;
+  margin-bottom: 0;
+  text-decoration-thickness: 1;
+}
+:root {
+  --height:10vh; 
+}
+.transition-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 4rem;
+  color:rgb(11, 11, 27);
+  font-family: fantasy;
+}
+
+.scroller {
+  height: var(--height);
+  line-height: var(--height);
+  overflow: hidden;
+  font-family: fantasy;
+  font-size: 4rem;
+  font-weight: bold;
+  color:#FFD1DC;
+}
+
+.scroller > span {
+  position: relative;
+  top: 0;
+  display: block;
+  animation: slide 10s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes slide {
+  0%, 20% { transform: translateY(0); }
+  
+  25%, 45% { transform: translateY(calc(var(--height) * -1)); }
+  
+  50%, 70% { transform: translateY(calc(var(--height) * -2)); }
+  
+  75%, 95% { transform: translateY(calc(var(--height) * -3)); }
+  
+  100% { transform: translateY(calc(var(--height) * -4)); }
+}
+
+.triangle-line {
+    width: 200px;
+    border:none;
+    height: 20px; 
+    background-color: #FFD1DC;
+    
+    
+    clip-path: polygon(
+        0% 60%,      
+        40% 60%,     
+        50% 0%,      
+        60% 60%,   
+        100% 60%,   
+        100% 70%,    
+        60% 70%, 
+        50% 10%,     
+        40% 70%, 
+        0% 70%       
+    );
+    
+    margin: 10px auto;
+}
+
